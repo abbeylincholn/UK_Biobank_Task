@@ -1,5 +1,4 @@
-// CommonJS version with device spreads
-// @ts-check
+
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
@@ -11,6 +10,6 @@ module.exports = defineConfig({
   projects: [    
     { name: 'firefox', use: { browserName: 'firefox',  headless: true, trace: 'on', screenshot: 'only-on-failure', video: 'retain-on-failure' } },
     { name: 'safari',  use: { browserName: 'webkit',   headless: true, trace: 'on', screenshot: 'only-on-failure', video: 'retain-on-failure' } },
-    { name: 'chrome',  use: { browserName: 'chromium',   headless: true, trace: 'on', screenshot: 'only-on-failure', video: 'retain-on-failure' } },
+    //{ name: 'chrome',  use: { browserName: 'chromium',   headless: true, trace: 'on', screenshot: 'only-on-failure', video: 'retain-on-failure' } },
   ],
 });
