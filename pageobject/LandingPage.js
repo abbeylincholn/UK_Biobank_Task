@@ -23,11 +23,11 @@ class LandingPage {
     this.pricing = page.getByRole('link', { name: 'Pricing' });
 
     this.searchBox = page.locator('._headerSearchBox_1bvo1_1');
-    this.searchDocs = page.getByPlaceholder("Search documentation...");   
+    this.searchDocs = page.getByPlaceholder("Search documentation...");
 
   }
 
-  async searchBoxInput (){    
+  async searchBoxInput() {
     await this.searchBox.click();
     await this.searchDocs.type("Key Features", { delay: 300 });
     await this.searchDocs.press("Enter")

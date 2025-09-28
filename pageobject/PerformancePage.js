@@ -5,7 +5,7 @@ class PerformancePage {
   constructor(page) {
     this.page = page;
     this.root = page.locator('.ag-root-wrapper').first();
-    this.scrollableRows = this.root.locator('.ag-center-cols-viewport');    
+    this.scrollableRows = this.root.locator('.ag-center-cols-viewport');
     this.PerformancePage = this.root.locator('.ag-row .ag-cell').first();
     this.perm = page.locator("//h1 [text()='Performance']");
     this.cookies = page.locator('button:has-text("Accept All Cookies")');
@@ -98,7 +98,7 @@ class PerformancePage {
     }
     await this.page.keyboard.press('Escape');
   }
- 
+
 
   async filterByBought(checked = true) {
     await this.boughtFilterBtn.click();
@@ -121,10 +121,10 @@ class PerformancePage {
   }
 
   async filterByTotalWinnings(min = 300000, max = 1000000) {
-    
-    await this.totalWinningsFirstCell.scrollIntoViewIfNeeded();    
+
+    await this.totalWinningsFirstCell.scrollIntoViewIfNeeded();
     await this.totalWinningsFilterBtn.click();
-    await this.FilterMenu.waitFor();  
+    await this.FilterMenu.waitFor();
     await this.setNumberOperator('Between');
     await this.numInputs.nth(0).click();
     await this.numInputs.nth(0).fill(String(min));
