@@ -95,3 +95,16 @@ The testing approach was to:
 4. Ensure compatibility across **Chromium, Firefox, and WebKit** both locally and in CI.  
 
 This provides a structured framework and demonstrates coverage of the most critical user interactions in AG Grid.
+
+---
+
+## ⚠️ Note on Parallel vs Sequential Execution
+
+The tests are configured to run in sequence rather than in parallel because of a **non-functional issue** related to the test environment.  
+In some browsers (Safari/WebKit), the cookie-consent overlay and certain UI behaviours occasionally interfere with parallel execution, causing tests to become flaky.  
+This does not indicate a defect in the application’s functionality but is a non-functional bug affecting stability of automated test runs.  
+
+Running tests sequentially ensures consistent and reliable results.  
+That is why the project is currently set up to run serially.  
+If I want to run the tests in parallel across multiple browsers at the same time, I can do so by commenting out two browsers in the Playwright configuration and running with just one active project.
+
